@@ -6,10 +6,10 @@ resource "aws_sqs_queue" "queue" {
   receive_wait_time_seconds = 0
 
   tags = {
-    Application = "${var.app_name}"
+    Application = var.app_name
     Billing     = "${var.environment}-${var.app_name}"
-    Environment = "${var.environment}"
+    Environment = var.environment
     Name        = "${var.environment}-${var.app_name}-${var.queue_usage}-queue"
-    Terraform   = "true"
+    Terraform   = true
   }
 }
